@@ -6,7 +6,7 @@ function SendMail($em_to,$subject,$mess)
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 	$headers .= 'To: '.$em_to . "\r\n";
-	$headers .= 'From: StarMaster <noreply@starsmaster.net>' . "\r\n";
+    $headers .= 'From: Speedy-watch <noreply@Speedy-watch.ru>' . "\r\n";
 	
 	mail($em_to, $subject, $mess, $headers);
 }
@@ -16,20 +16,24 @@ $email = $_POST['email'];
 $tel = $_POST['tel'];
 $adress = $_POST['adress'];
 $kolvo = $_POST['kolvo'];
+$phone = '+7(909)588-64-58';
+$logFilePath = 'ordersLog.txt';
+$handle = fopen($logFilePath, 'a');
 
-$adminEmail = 'a.krylov@topface.com';
+$adminEmail = 'starsmaster@allsocial.ru';
 
-$mess = "Новый заказ StarMaster. <br/>ФИО: ".$fio."<br/>"."E-mail: ".$email."<br/>"."<br/>Телефон: ".$tel."<br/>Адрес: ".$adress;
+$mess = "Новый заказ Speedy-watch. <br/>ФИО: ".$fio." в количестве $kolvo <br/>"."E-mail: ".$email."<br/>"."<br/>Телефон: ".$tel."<br/>Адрес: ".$adress;
 
-SendMail($adminEmail, 'Новый заказ', $mess);
+fwrite($handle, $mess . PHP_EOL);
+fclose($handle);
+
+SendMail($adminEmail, 'Новый заказ Часов', $mess);
 
 $mess = <<<HDO
 Уважаемый $fio <br/>
-Вы заказали у нас на starsmaster.net ночник-проектор ($kolvo шт.), указали адрес $adress, в течение рабочего дня с Вами свяжется наш менеджер для подтверждения заказа.<br/>
-Возникшие вопросы вы можете задать по такому-то номеру телефона.<br/>
+Вы заказали у нас на Speedy-watch.net часы ($kolvo шт.), указали адрес $adress, в течение рабочего дня с Вами свяжется наш менеджер для подтверждения заказа.<br/>
+Возникшие вопросы вы можете задать  по телефону $phone .<br/>
 Спасибо, что воспользовались нашими услугами!
 HDO;
 
 SendMail($email, 'Ваш заказ', $mess);
-
-?>
