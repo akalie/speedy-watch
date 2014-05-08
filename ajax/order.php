@@ -6,7 +6,7 @@ function SendMail($em_to,$subject,$mess)
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 	$headers .= 'To: '.$em_to . "\r\n";
-    $headers .= 'From: Speedy-watch <noreply@Speedy-watch.ru>' . "\r\n";
+    $headers .= 'From: Speedy-watch <noreply@Speedy-watch.net>' . "\r\n";
 	
 	mail($em_to, $subject, $mess, $headers);
 }
