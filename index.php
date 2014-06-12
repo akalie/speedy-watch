@@ -32,6 +32,7 @@
 						<div class=stock-price></div>
 						<small>Заполните пожалуйста поля</small>
 						<form class=sval-form method=POST action="ajax/order.php" target="speedy">
+
 						<input name=fio type=text sval="ФИО" value="ФИО"/>
 						<input name=email type=text sval="E-mail" value="E-mail"/>
 						<input id="tel" name=tel type=text sval="+7(___) ___-__-__" value="+7(___) ___-__-__"/>

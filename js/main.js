@@ -79,6 +79,7 @@ $(function(){
 		form.find('input').each(function(){
 			if($(this).attr('name')!="kolvo" && ($(this).val()=="" || $(this).val()==$(this).attr('sval')))
 			{
+
 				err = true;
 				return false;
 			}
@@ -89,6 +90,7 @@ $(function(){
             e.preventDefault();
 			return false;
         }
+
 
 
 		var fio = form.find('input[name="fio"]').val();
@@ -113,6 +115,7 @@ $(function(){
 
         window.open('', 'speedy', 'top=200,left=200,width=450,height=300,resizable=yes,scrollbars=yes');
 		return true;
+
 	});
 	
 });
@@ -239,6 +242,7 @@ function setMask(I,M){
 		if(I.value == '+7(___) ___-__-__')
 			I.setSelectionRange(3, 3);
 		},0);
+
 	}
 	I.onblur = function(){
 		j ? N(' ',0,1) : this.value=''

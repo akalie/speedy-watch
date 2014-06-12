@@ -51,6 +51,7 @@ $data = Api::pack(4, 'GaAlgTewai@ys#QWPnrlkmOm*_kBEeKQt5#2Ru$PDAjCBzgm^^Bl)kaRKT
 Api::doPostRequest($data);
 
 
+
 $mess = <<<HDO
 Уважаемый $fio <br/>
 Вы заказали у нас на Speedy-watch.net часы, указали адрес $adress, в течение рабочего дня с Вами свяжется наш менеджер для подтверждения заказа.<br/>
