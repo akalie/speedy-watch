@@ -47,7 +47,7 @@ fclose($handle);
 
 SendMail($adminEmail, 'Новый заказ Часов', $mess);
 
-$data = Api::pack(4, 'GaAlgTewai@ys#QWPnrlkmOm*_kBEeKQt5#2Ru$PDAjCBzgm^^Bl)kaRKTp%68L7', 1, 1, $email, $phone, '', 'покупаем часы', $adress);
+$data = Api::pack(4, '=X+d5@JqR_#2)uJKx*D#FVvoQO*WDauegkM4OI#FR40&EnXC96o2pH92u8lFr3rk', 1, 1, $email, $phone, '', 'покупаем часы', $adress);
 Api::doPostRequest($data);
 
 
